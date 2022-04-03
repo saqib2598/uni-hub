@@ -5,8 +5,38 @@
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="field">
+      <%= f.label :first_name %><br />
+      <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :last_name %><br />
+      <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :age %><br />
+      <%= f.number_field :age, autofocus: true, autocomplete: "age" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :city %><br />
+      <%= f.text_field :city, autofocus: true, autocomplete: "city" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :phone_number %><br />
+      <%= f.text_field :phone_number, autofocus: true, autocomplete: "phone_number" %>
+    </div>
+
+    <div class="field">
       <%= f.label :email %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :interested_program %><br />
+      <%= f.text_field :interested_program, autofocus: true, autocomplete: "interested_program" %>
     </div>
 
     <div class="field">

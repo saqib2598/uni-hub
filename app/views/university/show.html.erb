@@ -1,0 +1,8 @@
+<div class="col-xs-12 col-sm-4 col-md-4">
+  <div class="card" style="width: 18rem;">
+    <img width="500" height="350" class="card-img-top" src="<%= rails_blob_url(@university.images.first.image.blob) unless @university.images.first.nil? %>" alt="University Image">
+    <div class="card-body">
+      <h5 class="card-title"><%= @university.name %></h5>
+    </div>
+  </div>
+</div>
