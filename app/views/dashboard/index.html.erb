@@ -1,1 +1,26 @@
-<h1>Welcome To UniHub</h1>
+<div class="container">
+  <h1>Welcome To UniHub</h1>
+
+  <section id="team" class="team team-1">
+    <div class="container">
+      <div class="row">
+
+        <% @universities.each do |uni| %>
+          <div class="col-xs-12 col-sm-4 col-md-4">
+            <div class="card" style="width: 18rem;">
+              <img width="300" height="150" class="card-img-top" src="<%= rails_blob_url(uni.images.first.image.blob) unless uni.images.first.nil? %>" alt="<%= uni.name %> Image">
+              <div class="card-body">
+                <h5 class="card-title"><%= uni.name %></h5>
+                <a href="<%= university_path(uni.id) %>" class="btn btn-primary">View</a>
+              </div>
+            </div>
+            <br><br>
+          </div>
+        <% end %>
+
+      </div>
+
+    </div>
+  </section>
+  <%= paginate @universities %>
+</div>
