@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_03_142935) do
+ActiveRecord::Schema.define(version: 2022_04_14_120658) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,20 @@ ActiveRecord::Schema.define(version: 2022_04_03_142935) do
     t.index ["imageable_type", "imageable_id"], name: "index_images_on_imageable"
   end
 
+  create_table "unihub_applications", force: :cascade do |t|
+    t.integer "current_qualification", default: 0, null: false
+    t.integer "interested_qualification", default: 0, null: false
+    t.string "course", default: "", null: false
+    t.boolean "accomodation_required", default: false, null: false
+    t.integer "status", default: 0, null: false
+    t.bigint "country_id"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["country_id"], name: "index_unihub_applications_on_country_id"
+    t.index ["user_id"], name: "index_unihub_applications_on_user_id"
+  end
+
   create_table "universities", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.bigint "country_id"
@@ -86,5 +100,7 @@ ActiveRecord::Schema.define(version: 2022_04_03_142935) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "unihub_applications", "countries"
+  add_foreign_key "unihub_applications", "users"
   add_foreign_key "universities", "countries"
 end

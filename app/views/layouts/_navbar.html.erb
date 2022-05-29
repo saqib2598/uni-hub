@@ -17,7 +17,7 @@
     </ul>
     <% if user_signed_in? %>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" class="btn btn-primary">Apply Now</a></li>
+            <li><a href="<%= new_unihub_application_path %>" class="btn btn-primary">Apply Now</a></li>
             <li><%= link_to current_user.email, edit_user_registration_path %></li>
             <li><%= link_to 'Logout', destroy_user_session_path %></li>
         </ul>

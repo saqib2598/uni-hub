@@ -1,0 +1,3 @@
+class UnihubApplication < ApplicationRecord
+  
+end
