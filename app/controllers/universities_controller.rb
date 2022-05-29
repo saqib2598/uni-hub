@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class UniversityController < ApplicationController
+class UniversitiesController < ApplicationController
   def show
     @university = University.find(params[:id])
   end

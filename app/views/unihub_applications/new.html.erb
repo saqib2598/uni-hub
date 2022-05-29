@@ -1,0 +1,33 @@
+
+
+<div class="center">
+  <h3>Please Fill Out Your Online Application</h3><br />
+  <%= form_with(model: @unihub_application) do |f| %>
+    <div class="mb-3">
+      <%= f.label :current_qualification, { class: "form-label"} %>
+      <%= f.select(:current_qualification, options_for_select(CURRENT_QUALIFICATION.map { |cq| [cq]}) ) %><br /><br />
+    </div>
+
+    <div class="mb-3">
+      <%= f.label :interested_qualification, { class: "form-label"} %>
+      <%= f.select(:interested_qualification, options_for_select(INTERESTED_QUALIFICATION.map { |ic| [ic]}) ) %><br /><br />
+    </div>
+
+    <div class="mb-3">
+      <%= f.label :country, { class: "form-label"} %>
+      <%= f.select(:country, options_for_select(Country.all.map { |c| [c.name]}) ) %><br /><br />
+    </div>
+
+    <div class="mb-3">
+      <%= f.label :course, { class: "form-label"} %>
+      <%= f.text_field :course %><br /><br />
+    </div>
+
+    <div class="mb-3">
+      <%= f.label :accomodation_required, { class: "form-label"} %>
+      <%= f.check_box :accomodation_required %><br /><br />
+    </div>
+     
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+  <% end %>
+</div>
