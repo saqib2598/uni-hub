@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
-CURRENT_QUALIFICATION = %w[Foundation Bachelors Masters].freeze
-
-INTERESTED_QUALIFICATION = %w[Foundation Diploma Bachelors Masters].freeze
+CURRENT_QUALIFICATION = %w[Intermediate Bachelors Masters].freeze
+INTERESTED_QUALIFICATION = %w[Foundation Diploma Undergraduate Graduate].freeze
+ADMIN_EMAIL = "saqibejaz285@gmail.com"
