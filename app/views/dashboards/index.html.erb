@@ -1,8 +1,18 @@
 <div class="container">
-  <h1>Welcome To UniHub</h1>
-
   <section id="team" class="team team-1">
     <div class="container">
+      <div class="jumbotron">
+        <h1 class="display-4">Welcome to UniHub!</h1>
+        <p class="lead">We provide information for universities from 50+ countries. Student from all over Pakistan can count on us for their studies abroad.</p>
+        <hr class="my-4">
+        <p>Just fill a small application form and we will contact you right away!</p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="<%= new_unihub_application_path %>" role="button">Apply Now</a>
+        </p>
+      </div>
+
+      <h2 class="center">Universities</h2>
+
       <div class="row">
 
         <% @universities.each do |uni| %>
@@ -11,6 +21,7 @@
               <img width="300" height="150" class="card-img-top" src="<%= rails_blob_url(uni.images.first.image.blob) unless uni.images.first.nil? %>" alt="<%= uni.name %> Image">
               <div class="card-body">
                 <h5 class="card-title"><%= uni.name %></h5>
+                <p class="card-text uni-card-description"><%= uni.description %></p>
                 <a href="<%= university_path(uni.id) %>" class="btn btn-primary">View</a>
               </div>
             </div>
@@ -19,7 +30,6 @@
         <% end %>
 
       </div>
-
     </div>
   </section>
   <%= paginate @universities %>

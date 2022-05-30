@@ -3,8 +3,9 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'dashboards#index'
-  get 'about' => 'dashboard#about', as: 'about'
-  get 'contact' => 'dashboard#contact', as: 'contact'
+  get 'about' => 'dashboards#about', as: 'about'
+  get 'contact' => 'dashboards#contact', as: 'contact'
+  get 'my_application' => 'dashboards#my_application', as: 'my_application'
 
   resources :universities, only: [:show]
   resources :unihub_applications
