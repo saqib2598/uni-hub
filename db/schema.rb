@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_30_214401) do
+ActiveRecord::Schema.define(version: 2022_06_04_224946) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 2022_05_30_214401) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "description"
+    t.string "world_ranking", default: "", null: false
     t.index ["country_id"], name: "index_universities_on_country_id"
   end
 
@@ -95,6 +96,9 @@ ActiveRecord::Schema.define(version: 2022_05_30_214401) do
     t.string "city", default: "", null: false
     t.string "phone_number", default: "", null: false
     t.string "interested_program"
+    t.string "tuition_fee", default: "", null: false
+    t.string "ielts_score", default: "not_required", null: false
+    t.string "intake", default: "", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
