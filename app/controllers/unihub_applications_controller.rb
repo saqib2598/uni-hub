@@ -4,7 +4,10 @@ class UnihubApplicationsController < ApplicationController
   before_action :filter_params, only: [:create]
 
   def new
-    if current_user.unihub_application.nil?
+    if current_user.nil?
+      flash[:alert] = 'Please login to apply.'
+      redirect_to new_user_session_path
+    elsif current_user.unihub_application.nil?
       @unihub_application = UnihubApplication.new
     else
       flash[:alert] = 'You already have an ongoing application'
