@@ -2,7 +2,7 @@
 
 class DashboardsController < ApplicationController
   def index
-    @universities = University.all.page(params[:page]).per(9)
+    @universities = University.all.order(created_at: :desc).page(params[:page]).per(9)
   end
 
   def my_application
