@@ -27,7 +27,7 @@
               <ul class="list-group list-group-flush">
                 <li class="list-group-item"><i class="fa fa-certificate" aria-hidden="true"></i> Ranking <%= uni.world_ranking %></li>
                 <li class="list-group-item"><i class="fa fa-money" aria-hidden="true"></i> Tuition Fee <%= uni.tuition_fee %></li>
-                <li class="list-group-item"><i class="fa fa-graduation-cap" aria-hidden="true"></i> IELTS Score <%= uni.ielts_score %></li>
+                <li class="list-group-item"><i class="fa fa-graduation-cap" aria-hidden="true"></i> IELTS Score <%= uni.ielts_score == 'not_required' ? 'Not Required' : uni.ielts_score %></li>
                 <li class="list-group-item"><i class="fa fa-university" aria-hidden="true"></i> Intakes <%= uni.intake %></li>
               </ul>
             </div>

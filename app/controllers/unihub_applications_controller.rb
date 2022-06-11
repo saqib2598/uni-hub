@@ -17,8 +17,12 @@ class UnihubApplicationsController < ApplicationController
 
   def create
     unihub_application = UnihubApplication.create!(unihub_application_params.except(:country))
-    # UserMailer.new_application_submitted_admin(unihub_application.id).deliver_now if unihub_application.save!
-
+    if unihub_application.save!
+      UserMailer.new_application_submitted_admin(unihub_application.id).deliver_now
+      flash[:notice] = 'Your application is submitted successfully.'
+    else
+      flash[:alert] = 'Application submission error. Please contact support.'
+    end
     redirect_to root_path
   end
 
